@@ -129,7 +129,7 @@
       } else {
         var context = inner.mode.xmlCurrentContext && inner.mode.xmlCurrentContext(state)
         var top = context.length ? context[context.length - 1] : ""
-        if (!context || (context.length && closingTagExists(cm, context, top, pos)))
+        if (!context || (context.length && closingTagExists(cm, context, top, pos)) || context[context.length - 1]==null)
           return CodeMirror.Pass;
         replacement = head + top
       }
